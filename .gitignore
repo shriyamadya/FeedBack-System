@@ -1,0 +1,16 @@
+# Python
+server/venv/
+__pycache__/
+*.pyc
+
+# Node
+client/node_modules/
+
+# Environment files
+server/.env
+client/.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
