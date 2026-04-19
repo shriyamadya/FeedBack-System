@@ -4,9 +4,11 @@ __pycache__/
 *.pyc
 
 # Node
+node_modules/
 client/node_modules/
 
-# Environment files
+# Env files
+.env
 server/.env
 client/.env
 
