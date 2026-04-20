@@ -11,30 +11,11 @@ import base64
 load_dotenv()
 
 app = FastAPI()
-from fastapi import FastAPI, HTTPException, Depends, Header
-from fastapi.middleware.cors import CORSMiddleware
-from pymongo import MongoClient
-from dotenv import load_dotenv
-from datetime import datetime
-from bson import ObjectId
-from bson.errors import InvalidId
-import os
-import base64
-
-load_dotenv()
-
-app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",
-        "http://localhost:5174",
-        "https://feed-back-system-seven.vercel.app",
-        "https://feed-back-system-2dl371bct-shriyamadyas-projects.vercel.app",
-        "https://feed-back-system-git-main-shriyamadyas-projects.vercel.app"
-    ],
-    allow_credentials=True,
+    allow_origins=["*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
 )
