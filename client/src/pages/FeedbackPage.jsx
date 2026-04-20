@@ -53,10 +53,10 @@ if (response.ok) {
     liked: "",
     improve: ""
   });
+  setSubmitted(true);
 } else {
   alert(data.detail || "Something went wrong");
 }
-      setSubmitted(true);
     } catch (error) {
       alert("Could not submit feedback. Please try again.");
     } finally {
