@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const API_BASE = import.meta.env.VITE_API_BASE;
+const API_BASE = "https://feedback-system-backend-5yb1.onrender.com";
 
 function AdminLogin() {
   const [username, setUsername] = useState("");
