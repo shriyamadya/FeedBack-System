@@ -37,7 +37,14 @@ function FeedbackPage() {
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify(form)
+         body: JSON.stringify({
+              instructor: instructor,
+              subject: subject,
+              rating: rating,
+              liked: liked,
+              improve: improve,
+             }
+            ),
       });
 
       if (!response.ok) {
