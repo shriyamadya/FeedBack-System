@@ -33,24 +33,29 @@ function FeedbackPage() {
       setSubmitting(true);
 
       const response = await fetch(`${API_BASE}/feedback`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-         body: JSON.stringify({
-              instructor: instructor,
-              subject: subject,
-              rating: rating,
-              liked: liked,
-              improve: improve,
-             }
-            ),
-      });
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(form)
+});
 
-      if (!response.ok) {
-        throw new Error("Submission failed");
-      }
+const data = await response.json();
 
+console.log("Response:", data); // 🔥 debug
+
+if (response.ok) {
+  alert("Feedback submitted successfully!");
+  setForm({
+    instructor: "",
+    subject: "",
+    rating: "",
+    liked: "",
+    improve: ""
+  });
+} else {
+  alert(data.detail || "Something went wrong");
+}
       setSubmitted(true);
     } catch (error) {
       alert("Could not submit feedback. Please try again.");
